@@ -6,9 +6,13 @@ Question: Create a comprehensive report showing patient_id, patient name, age, s
 
 SQL QUERY:
 
+SELECT p.patient_id, p.name AS patient_name, p.age, p.service, COUNT(s.staff_id) AS total_staff FROM patients p JOIN staff s ON p.service = s.service GROUP BY p.patient_id, p.name, p.age, p.service HAVING COUNT(s.staff_id)>5 ORDER BY total_staff DESC, patient_name;
 
 OUTPUT:
 
+<img width="1280" height="630" alt="image" src="https://github.com/user-attachments/assets/4231836c-ebc7-440a-b7e4-a0262ed36406" />
+
+1000 rows selected
 
 🧠 What I Learned Today:
 
